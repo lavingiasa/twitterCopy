@@ -71,10 +71,13 @@ describe "User pages" do
 
         it { should have_title('Sign Up') }
         it { should have_content('error') }
+        it { should_not have_link('Settings') }
+        it { should_not have_link('Profile') }
       end
 
       it "should not create a user" do
         expect { click_button submit }.not_to change(User, :count)
+      
       end
     end
 
