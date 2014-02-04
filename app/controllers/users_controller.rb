@@ -61,12 +61,14 @@ class UsersController < ApplicationController
       redirect_to(root_url) unless current_user.admin?
     end
 
+=begin
     def signed_in_user
       unless signed_in? 
         store_location
         redirect_to signin_url, notice: "Please sign in."
        end
     end
+=end
 
     def correct_user
        @user = User.find(params[:id])
